@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reka Niskala - Digital Creative Agency</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo Reka Niskala.png">
+    <link rel="shortcut icon" type="image/png" href="Logo Reka Niskala.png">
+    <link rel="apple-touch-icon" href="Logo Reka Niskala.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#f7f5eb',
+                        brandLime: '#a9b43a',
+                        brandLimeDark: '#8a9430',
+                        brandOrange: '#fd9756',
+                        brandOrangeDark: '#e07e3e',
+                        brandDark: '#1E232A',
+                        brandGray: '#edebd8',
+                        brandCard: '#FFFFFF',
+                        brandYellow: '#f7f5eb'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Inter & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f5eb;
+            color: #1E232A;
+        }
+
+        .gradient-text-lime-orange {
+            background: linear-gradient(135deg, #8a9430 0%, #fd9756 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg-accent {
+            background: linear-gradient(135deg, rgba(169, 180, 58, 0.12) 0%, rgba(253, 151, 86, 0.12) 100%);
+        }
+
+        .gradient-button {
+            background: linear-gradient(135deg, #a9b43a 0%, #8a9430 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(135deg, #8a9430 0%, #728025 100%);
+            box-shadow: 0 8px 20px -4px rgba(169, 180, 58, 0.45);
+        }
+
+        .gradient-orange-btn {
+            background: linear-gradient(135deg, #fd9756 0%, #e07e3e 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-orange-btn:hover {
+            background: linear-gradient(135deg, #e07e3e 0%, #c96530 100%);
+            box-shadow: 0 8px 20px -4px rgba(253, 151, 86, 0.45);
+        }
+
+        .glass-card {
+            background: rgba(247, 245, 235, 0.90);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 215, 190, 0.6);
+        }
+
+        /* Gradient CTA Section */
+        .gradient-cta-section {
+            background: linear-gradient(135deg, #a9b43a 0%, #c8b840 40%, #fd9756 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-cta-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+            background: rgba(247, 245, 235, 0.15);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .gradient-cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -40px;
+            width: 320px;
+            height: 320px;
+            background: rgba(30, 35, 42, 0.12);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .brand-logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-logo-img-footer {
+            height: 64px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* DB Tab Active State - pure CSS to avoid Tailwind dynamic class issue */
+        .db-tab-btn {
+            background: #ffffff;
+            color: #374151;
+            border: 1px solid #e7e5e4;
+            transition: all 0.2s ease;
+        }
+
+        .db-tab-btn:hover {
+            background: #f5f5f4;
+        }
+
+        .db-tab-btn.is-active {
+            background: #1E232A !important;
+            color: #ffffff !important;
+            border-color: #1E232A !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fix: Prevent fixed navbar from covering section anchors */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brandOrange selection:text-white">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card transition-all duration-300 border-b border-stone-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Identity Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="Logo Reka Niskala.png" alt="Reka Niskala Logo"
+                    class="brand-logo-img group-hover:scale-105 transition-transform drop-shadow-sm">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+                <a href="#about" class="hover:text-brandLime transition-colors">Tentang Kami</a>
+                <a href="#services" class="hover:text-brandLime transition-colors">3 Pilar Layanan</a>
+                <a href="#estimator" class="hover:text-brandLime transition-colors">Kalkulator Layanan</a>
+                <a href="#data-visualizer" class="hover:text-brandLime transition-colors">Reka Data Visualizer</a>
+                <a href="#roi-calculator" class="hover:text-brandLime transition-colors">Audit Brand & ROI</a>
+                <a href="#team" class="hover:text-brandLime transition-colors">Tim Kami</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center">
+                <a href="#estimator"
+                    class="gradient-orange-btn text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-sm flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Konsultasi Proyek</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-stone-700 hover:text-brandDark focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-stone-700 hover:text-brandLime font-medium">Tentang Kami</a>
+            <a href="#services" class="block py-2 text-stone-700 hover:text-brandLime font-medium">3 Pilar Layanan</a>
+            <a href="#estimator" class="block py-2 text-stone-700 hover:text-brandLime font-medium">Kalkulator
+                Layanan</a>
+            <a href="#data-visualizer" class="block py-2 text-stone-700 hover:text-brandLime font-medium">Reka Data
+                Visualizer</a>
+            <a href="#roi-calculator" class="block py-2 text-stone-700 hover:text-brandLime font-medium">Audit Brand &
+                ROI</a>
+            <a href="#team" class="block py-2 text-stone-700 hover:text-brandLime font-medium">Tim Kami</a>
+            <a href="#estimator"
+                class="block w-full text-center gradient-orange-btn text-white py-3 rounded-xl font-semibold mt-4">
+                Konsultasi Proyek
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- HERO BANNER SECTION -->
+        <section
+            class="relative min-h-[calc(100vh-80px)] flex flex-col justify-center py-8 sm:py-10 overflow-hidden bg-gradient-to-b from-brandBg via-white to-brandBg">
+            <!-- Background Decorative Ornaments -->
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-brandLime/15 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-1/4 right-10 w-80 h-80 bg-brandOrange/15 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full my-auto">
+                <!-- Location Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-100 border border-stone-200 text-stone-700 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-brandLime animate-ping"></span>
+                    <i class="fa-solid fa-location-dot text-brandOrange"></i>
+                    <span>Makassar & Gowa, Sulawesi Selatan</span>
+                </div>
+
+                <!-- Main Greeting Highlight -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brandDark mb-5 leading-tight">
+                    <span
+                        class="block text-brandOrange text-2xl sm:text-4xl md:text-5xl mb-2 font-black tracking-wide">HALO
+                        REKAN NISKALA!!!</span>
+                    Crafted to Connect
+                </h1>
+
+                <!-- Agency Identity Description -->
+                <p class="max-w-3xl mx-auto text-base sm:text-lg text-stone-600 mb-8 font-normal leading-relaxed">
+                    Kami adalah <span class="font-bold text-brandDark">Digital Marketing & Creative E-Commerce
+                        Agency</span>. Kami menjembatani brand Anda dengan audiens melalui kekuatan narasi emosional,
+                    estetika visual tinggi, serta infrastruktur web & arsitektur database relasional presisi tinggi.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#estimator"
+                        class="w-full sm:w-auto gradient-button text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg hover:shadow-xl text-sm sm:text-base flex items-center justify-center gap-3">
+                        <span>Hitung Estimasi Proyek</span>
+                        <i class="fa-solid fa-calculator"></i>
+                    </a>
+                    <a href="#services"
+                        class="w-full sm:w-auto bg-white border border-stone-300 text-stone-800 hover:bg-stone-50 font-bold px-7 py-3.5 rounded-2xl shadow-sm transition-all text-sm sm:text-base flex items-center justify-center gap-2">
+                        <span>Eksplor Layanan</span>
+                        <i class="fa-solid fa-arrow-down text-brandOrange"></i>
+                    </a>
+                </div>
+
+                <!-- Stats Brief Grid -->
+                <div class="mt-8 sm:mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-white/80 border border-stone-200/80 shadow-sm">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brandLime">3 Pilar</div>
+                        <div class="text-xs sm:text-sm text-stone-500 font-medium mt-0.5">Sistem Layanan Terpadu</div>
+                    </div>
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-white/80 border border-stone-200/80 shadow-sm">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brandOrange">High ROI</div>
+                        <div class="text-xs sm:text-sm text-stone-500 font-medium mt-0.5">Fokus Konversi Business</div>
+                    </div>
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-white/80 border border-stone-200/80 shadow-sm">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brandLime">100%</div>
+                        <div class="text-xs sm:text-sm text-stone-500 font-medium mt-0.5">Otentik & Data Driven</div>
+                    </div>
+                    <div class="p-3.5 sm:p-4 rounded-2xl bg-white/80 border border-stone-200/80 shadow-sm">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brandOrange">SQL Ready</div>
+                        <div class="text-xs sm:text-sm text-stone-500 font-medium mt-0.5">Arsitektur DB Presisi</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILO VALUES SECTION -->
+        <section id="about"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-white border-y border-stone-200/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandLime uppercase bg-stone-100 px-3.5 py-1 rounded-full border border-stone-200">Prinsip
+                        Kerja Agensi</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">Nilai Utama FILO</h2>
+                    <p class="text-stone-600 text-sm">Landasan pemasaran dan strategi berorientasi hasil yang kami
+                        terapkan
+                        dalam setiap eksekusi kampanye brand Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- F - Filosofis -->
+                    <div
+                        class="p-5 sm:p-6 rounded-2xl bg-brandBg border border-stone-200 hover:border-brandLime transition-all duration-300 relative group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brandLime/20 text-brandLimeDark font-black text-2xl flex items-center justify-center mb-3 group-hover:bg-brandLime group-hover:text-white transition-colors">
+                                F
+                            </div>
+                            <h3 class="text-xl font-extrabold text-brandDark mb-0.5">Filosofis</h3>
+                            <div class="text-xs font-bold text-brandLime uppercase tracking-wider mb-2">Story-Driven
+                                Crafting</div>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                                Menggali inti cerita dan nilai unik brand Anda untuk menciptakan narasi emosional yang
+                                memikat serta membangun brand equity berjangka panjang.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-stone-200 text-xs sm:text-sm text-stone-600 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-feather text-brandLime"></i>
+                            <span>Narasi Emosional & Equity</span>
+                        </div>
+                    </div>
+
+                    <!-- I - Inovatif -->
+                    <div
+                        class="p-5 sm:p-6 rounded-2xl bg-brandBg border border-stone-200 hover:border-brandOrange transition-all duration-300 relative group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brandOrange/20 text-brandOrangeDark font-black text-2xl flex items-center justify-center mb-3 group-hover:bg-brandOrange group-hover:text-white transition-colors">
+                                I
+                            </div>
+                            <h3 class="text-xl font-extrabold text-brandDark mb-0.5">Inovatif</h3>
+                            <div class="text-xs font-bold text-brandOrange uppercase tracking-wider mb-2">Tech-Powered
+                                Engine</div>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                                Memadukan estetika visual dengan teknologi web modern dan arsitektur database relasional
+                                presisi tinggi untuk performa bisnis yang terstruktur.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-stone-200 text-xs sm:text-sm text-stone-600 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-database text-brandOrange"></i>
+                            <span>Web Tech & Database SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- L - Lincah -->
+                    <div
+                        class="p-5 sm:p-6 rounded-2xl bg-brandBg border border-stone-200 hover:border-brandLime transition-all duration-300 relative group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brandLime/20 text-brandLimeDark font-black text-2xl flex items-center justify-center mb-3 group-hover:bg-brandLime group-hover:text-white transition-colors">
+                                L
+                            </div>
+                            <h3 class="text-xl font-extrabold text-brandDark mb-0.5">Lincah</h3>
+                            <div class="text-xs font-bold text-brandLime uppercase tracking-wider mb-2">Agile Trend
+                                Mastery</div>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                                Bergerak adaptif mengikuti pergeseran tren media sosial dan perilaku belanja konsumen
+                                digital agar brand Anda selalu relevan dan unggul.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-stone-200 text-xs sm:text-sm text-stone-600 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-brandLime"></i>
+                            <span>Sosmed & Consumer Trend</span>
+                        </div>
+                    </div>
+
+                    <!-- O - Otentik -->
+                    <div
+                        class="p-5 sm:p-6 rounded-2xl bg-brandBg border border-stone-200 hover:border-brandOrange transition-all duration-300 relative group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brandOrange/20 text-brandOrangeDark font-black text-2xl flex items-center justify-center mb-3 group-hover:bg-brandOrange group-hover:text-white transition-colors">
+                                O
+                            </div>
+                            <h3 class="text-xl font-extrabold text-brandDark mb-0.5">Otentik</h3>
+                            <div class="text-xs font-bold text-brandOrange uppercase tracking-wider mb-2">High-Value
+                                Aesthetics</div>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                                Menyajikan karya visual dan strategi pemasaran yang jujur, estetik, serta memberikan
+                                nilai konversi nyata bagi bisnis.
+                            </p>
+                        </div>
+                        <div
+                            class="pt-3 border-t border-stone-200 text-xs sm:text-sm text-stone-600 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-gem text-brandOrange"></i>
+                            <span>Visual Estetik & Konversi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 PILAR UTAMA LAYANAN AGENSI -->
+        <section id="services"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-brandBg border-b border-stone-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandOrange uppercase bg-orange-100/60 px-3.5 py-1 rounded-full border border-orange-200">Fokus
+                        Bisnis Produk Kreatif & Gift</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">3 Pilar Utama Reka Niskala
+                    </h2>
+                    <p class="text-stone-600 text-sm max-w-2xl mx-auto">Ekosistem lengkap dari konten visual hingga
+                        pengolahan database untuk mempercepat skala bisnis e-commerce Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+                    <!-- Pilar 1: Reka Visual -->
+                    <div
+                        class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-11 h-11 rounded-xl bg-brandLime/20 text-brandLimeDark flex items-center justify-center text-xl mb-3">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-brandLime block">Pilar
+                                01</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-brandDark mt-0.5 mb-1">Reka Visual</h3>
+                            <p class="text-stone-500 text-xs sm:text-sm mb-4">Digital Marketing & Visual Content Creator
+                            </p>
+
+                            <ul class="space-y-2.5 text-stone-700 text-sm mb-5">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>Management Content:</strong> Feed, Reels, & TikTok berkala.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>Photography & Mockup 3D:</strong> Visualisasi produk berestetika
+                                        tinggi.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>Narrative Copywriting:</strong> Pesan emosional menyentuh momen
+                                        spesial.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-stone-50 p-3 rounded-xl border border-stone-100 text-xs sm:text-sm text-stone-600 font-medium">
+                            <i class="fa-solid fa-bullhorn text-brandOrange mr-1"></i> Output: Awareness tinggi &
+                            Engagement otentik
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2: Reka System -->
+                    <div
+                        class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-11 h-11 rounded-xl bg-brandOrange/20 text-brandOrangeDark flex items-center justify-center text-xl mb-3">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-brandOrange block">Pilar
+                                02</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-brandDark mt-0.5 mb-1">Reka System</h3>
+                            <p class="text-stone-500 text-xs sm:text-sm mb-4">Web Development & E-Commerce Integration
+                            </p>
+
+                            <ul class="space-y-2.5 text-stone-700 text-sm mb-5">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandOrange mt-0.5"></i>
+                                    <span><strong>Web Katalog Interaktif:</strong> Showcase produk UI/UX cepat &
+                                        responsif.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandOrange mt-0.5"></i>
+                                    <span><strong>Form Custom Order:</strong> Alur pesan pesanan khusus/gift
+                                        otomatis.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandOrange mt-0.5"></i>
+                                    <span><strong>Payment & Logistics:</strong> Integrasi QRIS, Transfer, &
+                                        Kurir.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-stone-50 p-3 rounded-xl border border-stone-100 text-xs sm:text-sm text-stone-600 font-medium">
+                            <i class="fa-solid fa-bolt text-brandLime mr-1"></i> Output: Konversi checkout lancar tanpa
+                            hambatan
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3: Reka Data -->
+                    <div
+                        class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-11 h-11 rounded-xl bg-brandLime/20 text-brandLimeDark flex items-center justify-center text-xl mb-3">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-brandLime block">Pilar
+                                03</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-brandDark mt-0.5 mb-1">Reka Data</h3>
+                            <p class="text-stone-500 text-xs sm:text-sm mb-4">Pengolahan Data & WhatsApp CRM</p>
+
+                            <ul class="space-y-2.5 text-stone-700 text-sm mb-5">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>Database SQL Relasional:</strong> Penyimpanan profil pelanggan &
+                                        order.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>Segmentation Engine:</strong> Segmentasi audiens histori
+                                        belanja.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brandLime mt-0.5"></i>
+                                    <span><strong>WhatsApp Re-engagement:</strong> Kampanye otomatis pendorong Repeat
+                                        Order.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-stone-50 p-3 rounded-xl border border-stone-100 text-xs sm:text-sm text-stone-600 font-medium">
+                            <i class="fa-solid fa-arrows-rotate text-brandOrange mr-1"></i> Output: Customer Lifetime
+                            Value (LTV) Maksimal
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC PACKAGE ESTIMATOR SECTION -->
+        <section id="estimator"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-white border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandLime uppercase bg-lime-100/60 px-3.5 py-1 rounded-full border border-lime-200">B2B
+                        Service Calculator</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">Dynamic Package Estimator
+                    </h2>
+                    <p class="text-stone-600 text-sm">Simulasikan kebutuhan layanan agensi Anda dan dapatkan estimasi
+                        investasi bisnis yang transparan.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                    <!-- Left: Options Selector -->
+                    <div
+                        class="bg-brandBg/60 p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+                        <!-- Module Selection -->
+                        <div>
+                            <h4
+                                class="text-xs sm:text-sm font-extrabold uppercase text-stone-700 mb-3 tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-brandOrange"></i>
+                                <span>1. Pilih Kombinasi Modul Agensi:</span>
+                            </h4>
+                            <div class="space-y-2.5">
+                                <label
+                                    class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-200 cursor-pointer hover:border-brandLime transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" id="mod-visual"
+                                            class="w-4 h-4 rounded text-brandLime focus:ring-brandLime border-stone-300"
+                                            checked onchange="calculateEstimate()">
+                                        <div>
+                                            <span class="font-bold text-stone-800 block text-sm">Reka Visual (Social
+                                                Media Management)</span>
+                                            <span class="text-xs text-stone-500">Feed, Reels/TikTok, Photography &
+                                                Copywriting</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-extrabold text-brandDark ml-2 whitespace-nowrap">Rp
+                                        2.500.000<span class="text-xs text-stone-400 font-normal">/bln</span></span>
+                                </label>
+
+                                <label
+                                    class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-200 cursor-pointer hover:border-brandLime transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" id="mod-system"
+                                            class="w-4 h-4 rounded text-brandLime focus:ring-brandLime border-stone-300"
+                                            checked onchange="calculateEstimate()">
+                                        <div>
+                                            <span class="font-bold text-stone-800 block text-sm">Reka System (E-Commerce
+                                                Web Katalog)</span>
+                                            <span class="text-xs text-stone-500">Custom Order Form, QRIS, Integrasi
+                                                Kurir</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-extrabold text-brandDark ml-2 whitespace-nowrap">Rp
+                                        3.500.000<span class="text-xs text-stone-400 font-normal">/sekali</span></span>
+                                </label>
+
+                                <label
+                                    class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-200 cursor-pointer hover:border-brandLime transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" id="mod-data"
+                                            class="w-4 h-4 rounded text-brandLime focus:ring-brandLime border-stone-300"
+                                            onchange="calculateEstimate()">
+                                        <div>
+                                            <span class="font-bold text-stone-800 block text-sm">Reka Data (Database SQL
+                                                & WA CRM)</span>
+                                            <span class="text-xs text-stone-500">Arsitektur DB Relasional & Campaign
+                                                Broadcaster</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-extrabold text-brandDark ml-2 whitespace-nowrap">Rp
+                                        1.800.000<span class="text-xs text-stone-400 font-normal">/bln</span></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Duration / Addons -->
+                        <div class="mt-4 pt-3 border-t border-stone-200/80">
+                            <h4
+                                class="text-xs sm:text-sm font-extrabold uppercase text-stone-700 mb-2.5 tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-clock text-brandLime"></i>
+                                <span>2. Durasi Kerjasama:</span>
+                            </h4>
+                            <div class="grid grid-cols-3 gap-2.5">
+                                <button type="button" onclick="setDuration(1)" id="dur-1"
+                                    class="dur-btn py-2 px-3 rounded-xl font-bold text-xs sm:text-sm bg-white border border-stone-200 text-stone-700 hover:border-brandOrange">1
+                                    Bulan</button>
+                                <button type="button" onclick="setDuration(3)" id="dur-3"
+                                    class="dur-btn py-2 px-3 rounded-xl font-bold text-xs sm:text-sm bg-brandOrange text-white border border-brandOrange">3
+                                    Bulan (-10%)</button>
+                                <button type="button" onclick="setDuration(6)" id="dur-6"
+                                    class="dur-btn py-2 px-3 rounded-xl font-bold text-xs sm:text-sm bg-white border border-stone-200 text-stone-700 hover:border-brandOrange">6
+                                    Bulan (-20%)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Summary Card -->
+                    <div
+                        class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="absolute top-0 right-0 w-28 h-28 bg-brandLime/10 rounded-bl-full pointer-events-none">
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-extrabold text-brandDark mb-0.5">Ringkasan Estimasi</h3>
+                            <p class="text-xs sm:text-sm text-stone-500 mb-4">Investasi terukur untuk pertumbuhan brand
+                                produk kreatif Anda.</p>
+
+                            <div class="space-y-2.5 mb-4 border-b border-stone-100 pb-3 text-sm">
+                                <div class="flex justify-between text-stone-600">
+                                    <span>Estimasi Dasar Modul:</span>
+                                    <span id="summary-base" class="font-bold text-stone-800">Rp 0</span>
+                                </div>
+                                <div class="flex justify-between text-stone-600">
+                                    <span>Diskon Durasi (<span id="summary-dur-text">3 Bulan</span>):</span>
+                                    <span id="summary-discount" class="font-bold text-brandLime">-Rp 0</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <span
+                                    class="text-xs font-bold text-stone-400 uppercase tracking-widest block mb-0.5">Total
+                                    Estimasi Investasi</span>
+                                <div id="total-price" class="text-3xl sm:text-4xl font-extrabold text-brandDark">Rp 0
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">*Harga akhir disesuaikan setelah tahap analisis
+                                    kebutuhan spesifik brand.</p>
+                            </div>
+                        </div>
+
+                        <button onclick="sendToWhatsApp()"
+                            class="w-full gradient-orange-btn text-white py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 mt-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Kirim Estimasi via WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE SQL DATABASE VISUALIZER (REKA DATA) -->
+        <section id="data-visualizer"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-brandBg border-b border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-5">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandOrange uppercase bg-orange-100/60 px-3.5 py-1 rounded-full border border-orange-200">Arsitektur
+                        DB Relasional</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">Interactive SQL Database
+                        Visualizer</h2>
+                    <p class="text-stone-600 text-sm">Visualisasi struktur data yang dikelola oleh pilar <span
+                            class="font-bold text-brandDark">Reka Data</span> untuk memastikan pengelolaan pesanan &
+                        pelanggan terorganisir.</p>
+                </div>
+
+                <!-- Entity Buttons -->
+                <div class="flex flex-wrap justify-center gap-2.5 mb-4">
+                    <button onclick="showTable('customers')" id="btn-customers"
+                        class="db-tab-btn is-active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold shadow-sm">
+                        <i class="fa-solid fa-users mr-1.5"></i>Customers
+                    </button>
+                    <button onclick="showTable('orders')" id="btn-orders"
+                        class="db-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold">
+                        <i class="fa-solid fa-cart-shopping mr-1.5"></i>Orders
+                    </button>
+                    <button onclick="showTable('products')" id="btn-products"
+                        class="db-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold">
+                        <i class="fa-solid fa-box-open mr-1.5"></i>Products
+                    </button>
+                    <button onclick="showTable('payments')" id="btn-payments"
+                        class="db-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold">
+                        <i class="fa-solid fa-credit-card mr-1.5"></i>Payments
+                    </button>
+                    <button onclick="showTable('shipments')" id="btn-shipments"
+                        class="db-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold">
+                        <i class="fa-solid fa-truck-fast mr-1.5"></i>Shipments
+                    </button>
+                </div>
+
+                <!-- Database Display Console -->
+                <div class="bg-white rounded-2xl border border-stone-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-stone-200 pb-3 mb-3">
+                        <div>
+                            <h3 id="table-title" class="text-lg sm:text-xl font-extrabold text-brandDark">Table:
+                                Customers</h3>
+                            <p id="table-desc" class="text-xs sm:text-sm text-stone-500">Penyimpanan profil pelanggan &
+                                histori preferensi gift.</p>
+                        </div>
+                        <span
+                            class="text-xs font-mono bg-stone-100 text-stone-600 px-3 py-1 rounded border border-stone-200">Engine:
+                            InnoDB (Relational)</span>
+                    </div>
+
+                    <!-- Schema & Sample Data Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                            <thead>
+                                <tr id="table-header"
+                                    class="border-b border-stone-200 bg-stone-50 text-stone-700 text-xs font-extrabold uppercase">
+                                    <!-- Dynamic JS Injection -->
+                                </tr>
+                            </thead>
+                            <tbody id="table-body"
+                                class="divide-y divide-stone-100 text-stone-600 font-mono text-xs sm:text-sm">
+                                <!-- Dynamic JS Injection -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SQL Query Preview Code -->
+                    <div class="mt-4 pt-3 border-t border-stone-200">
+                        <div class="text-xs font-bold text-stone-500 uppercase tracking-wider mb-1.5">Simulasi SQL Query
+                            Reka Data:</div>
+                        <pre id="sql-code"
+                            class="bg-stone-900 text-brandLime p-3 rounded-lg text-xs sm:text-sm font-mono overflow-x-auto">SELECT * FROM customers WHERE lifetime_orders > 1 ORDER BY last_order_date DESC;</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND AUDIT & ROI CALCULATOR SECTION -->
+        <section id="roi-calculator"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-white border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandLime uppercase bg-lime-100/60 px-3.5 py-1 rounded-full border border-lime-200">Diagnosa
+                        Performa Bisnis</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">Brand Audit & ROI
+                        Calculator</h2>
+                    <p class="text-stone-600 text-sm">Kalkulasi potensi pertumbuhan repeat order & konversi penjualan
+                        UMKM produk kreatif Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                    <!-- Calculator Inputs - Dark Card -->
+                    <div
+                        class="bg-gradient-to-br from-brandDark to-stone-800 text-white p-5 sm:p-6 rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="absolute -left-10 -top-10 w-40 h-40 bg-brandLime/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+
+                        <div
+                            class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-brandOrange mb-4 border border-white/10 w-fit">
+                            Input Data Bisnis Anda
+                        </div>
+
+                        <div class="space-y-4 flex-1">
+                            <div>
+                                <label
+                                    class="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-300 mb-1.5">
+                                    Total Pelanggan Saat Ini / Bulan:
+                                </label>
+                                <input type="number" id="roi-customers" value="250"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder-stone-400 focus:ring-2 focus:ring-brandLime focus:outline-none font-bold text-sm sm:text-base"
+                                    oninput="calculateROI()">
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-300 mb-1.5">
+                                    Rata-rata Nilai Pesanan (AOV) - Rp:
+                                </label>
+                                <input type="number" id="roi-aov" value="150000"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder-stone-400 focus:ring-2 focus:ring-brandLime focus:outline-none font-bold text-sm sm:text-base"
+                                    oninput="calculateROI()">
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-300 mb-1.5">
+                                    Tingkat Repeat Order Saat Ini (%):
+                                </label>
+                                <input type="range" id="roi-repeat" min="5" max="50" value="10"
+                                    class="w-full accent-brandLime cursor-pointer" oninput="calculateROI()">
+                                <div class="text-right text-sm font-bold text-brandLime mt-1"><span
+                                        id="roi-repeat-val">10</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Output Card - Dark Card -->
+                    <div
+                        class="bg-gradient-to-br from-stone-800 to-brandDark text-white p-5 sm:p-6 rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-brandOrange/20 rounded-full blur-2xl pointer-events-none">
+                        </div>
+
+                        <div
+                            class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-brandLime mb-4 border border-white/10 w-fit">
+                            Proyeksi Optimalisasi Reka Niskala
+                        </div>
+
+                        <div class="space-y-4 flex-1">
+                            <div>
+                                <span class="text-xs sm:text-sm text-stone-400 block mb-0.5">Pendapatan Bulanan
+                                    Eksisting:</span>
+                                <div id="roi-current-rev" class="text-xl sm:text-2xl font-bold text-stone-200">Rp
+                                    37.500.000</div>
+                            </div>
+
+                            <div class="pt-3 border-t border-stone-700">
+                                <span class="text-xs sm:text-sm text-brandLime block mb-0.5 font-semibold">Potensi
+                                    Pendapatan Setelah WhatsApp CRM &amp; Redesain Web:</span>
+                                <div id="roi-projected-rev" class="text-2xl sm:text-3xl font-extrabold text-white">Rp
+                                    52.500.000</div>
+                            </div>
+
+                            <div
+                                class="bg-white/10 p-3.5 rounded-xl border border-white/10 flex items-center justify-between">
+                                <span class="text-xs sm:text-sm text-stone-300">Estimasi Tambahan Omset:</span>
+                                <span id="roi-gain" class="text-base sm:text-lg font-extrabold text-brandOrange">+Rp
+                                    15.000.000 /bln</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <a href="#estimator"
+                                class="block w-full text-center gradient-button text-white py-3 rounded-xl font-bold text-sm shadow-md">
+                                Klaim Potensi Pertumbuhan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRUCTURE TEAM SHOWCASE SECTION -->
+        <section id="team"
+            class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-6 sm:py-8 bg-brandBg border-b border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <span
+                        class="text-xs font-extrabold tracking-widest text-brandOrange uppercase bg-orange-100/60 px-3.5 py-1 rounded-full border border-orange-200">Tim
+                        Eksekusi Agensi</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brandDark mt-2 mb-2">Struktur Tim Reka Niskala
+                    </h2>
+                    <p class="text-stone-600 text-sm">Kolaborasi profesional multidisiplin yang siap mengawal kesuksesan
+                        digital brand Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Team Member 1 -->
+                    <div
+                        class="bg-white rounded-2xl p-5 border border-stone-200 text-center hover:shadow-md transition-shadow group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-brandLime to-stone-200 p-0.5 mb-3">
+                                <div
+                                    class="w-full h-full rounded-full bg-stone-100 flex items-center justify-center text-brandDark font-extrabold text-lg group-hover:scale-105 transition-transform">
+                                    AND
+                                </div>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-brandDark">Ahmad Naufal Dzaky</h3>
+                            <p class="text-xs font-bold text-brandOrange uppercase tracking-wider mt-0.5 mb-2">CEO &
+                                Chief Strategist</p>
+                            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Memimpin visi strategis,
+                                pertumbuhan bisnis, dan integrasi pilar layanan agensi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div
+                        class="bg-white rounded-2xl p-5 border border-stone-200 text-center hover:shadow-md transition-shadow group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-brandOrange to-stone-200 p-0.5 mb-3">
+                                <div
+                                    class="w-full h-full rounded-full bg-stone-100 flex items-center justify-center text-brandDark font-extrabold text-lg group-hover:scale-105 transition-transform">
+                                    NUT
+                                </div>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-brandDark">Nur Ulfiah Triputri I.</h3>
+                            <p class="text-xs font-bold text-brandLime uppercase tracking-wider mt-0.5 mb-2">Content
+                                Creator & Visual Designer</p>
+                            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Menyusun aset visual estetik,
+                                konseptualisasi reels, dan feed pilar Reka Visual.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div
+                        class="bg-white rounded-2xl p-5 border border-stone-200 text-center hover:shadow-md transition-shadow group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-brandLime to-stone-200 p-0.5 mb-3">
+                                <div
+                                    class="w-full h-full rounded-full bg-stone-100 flex items-center justify-center text-brandDark font-extrabold text-lg group-hover:scale-105 transition-transform">
+                                    NAS
+                                </div>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-brandDark">Nur Asizah S.</h3>
+                            <p class="text-xs font-bold text-brandOrange uppercase tracking-wider mt-0.5 mb-2">Brand
+                                Strategist & Content Ops</p>
+                            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Menganalisis pergeseran tren
+                                pasar serta mengelola eksekusi kampanye brand.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div
+                        class="bg-white rounded-2xl p-5 border border-stone-200 text-center hover:shadow-md transition-shadow group flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-16 h-16 mx-auto rounded-full bg-gradient-to-tr from-brandOrange to-stone-200 p-0.5 mb-3">
+                                <div
+                                    class="w-full h-full rounded-full bg-stone-100 flex items-center justify-center text-brandDark font-extrabold text-lg group-hover:scale-105 transition-transform">
+                                    ASR
+                                </div>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-brandDark">A. Sifa Ramadani</h3>
+                            <p class="text-xs font-bold text-brandLime uppercase tracking-wider mt-0.5 mb-2">Web &
+                                Database Analyst</p>
+                            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed">Mengembangkan web katalog
+                                interaktif Reka System & skema Reka Data SQL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRADIENT CTA SECTION -->
+        <section class="gradient-cta-section min-h-[calc(100vh-80px)] flex flex-col justify-center py-10 sm:py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full my-auto">
+                <span
+                    class="inline-block text-xs font-extrabold tracking-widest uppercase bg-white/20 text-white px-3.5 py-1 rounded-full border border-white/30 mb-4">
+                    Siap Berkolaborasi?
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4 leading-tight drop-shadow-sm">
+                    Wujudkan Brand Impian Anda<br>
+                    <span class="text-white/90">Bersama Reka Niskala</span>
+                </h2>
+                <p class="text-white/85 text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+                    Dari konten visual emosional hingga sistem web e-commerce dan database relasional — kami adalah
+                    mitra pertumbuhan brand kreatif Anda.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
+                    <a href="https://wa.me/6282347048779?text=Halo%20Reka%20Niskala,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20agensi."
+                        target="_blank"
+                        class="inline-flex items-center gap-2.5 bg-white text-brandDark font-extrabold px-6 py-3.5 rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-sm sm:text-base">
+                        <i class="fa-brands fa-whatsapp text-xl text-brandLime"></i>
+                        <span>Hubungi via WhatsApp</span>
+                    </a>
+                    <a href="#estimator"
+                        class="inline-flex items-center gap-2 bg-white/20 border border-white/40 text-white font-bold px-6 py-3.5 rounded-xl hover:bg-white/30 transition-all text-sm sm:text-base">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Hitung Estimasi Proyek</span>
+                    </a>
+                </div>
+                <p class="mt-6 text-white/70 text-xs sm:text-sm">
+                    <i class="fa-solid fa-phone mr-1.5"></i>0823-4704-8779
+                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                    <i class="fa-solid fa-envelope mr-1.5"></i>rekaniskala.agency@gmail.com
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-brandDark text-white pt-16 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="Logo Reka Niskala.png" alt="Reka Niskala Logo"
+                            class="brand-logo-img-footer brightness-0 invert">
+                    </div>
+                    <p class="text-stone-400 text-sm max-w-md leading-relaxed mb-6">
+                        Digital Marketing & Creative E-Commerce Agency berbasis di Makassar & Gowa, Sulawesi Selatan.
+                        Membantu UMKM dan Brand Kreatif berkembang melalui narasi emosional, sistem web e-commerce, dan
+                        data relasional.
+                    </p>
+                    <div class="text-xs text-stone-400 space-y-1">
+                        <p><i class="fa-solid fa-location-dot text-brandLime mr-2"></i>Makassar / Gowa, Sulawesi
+                            Selatan, Indonesia</p>
+                        <p><i class="fa-solid fa-envelope text-brandOrange mr-2"></i>rekaniskala.agency@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-stone-200 mb-4">Navigasi Utama</h4>
+                    <ul class="space-y-2 text-sm text-stone-400">
+                        <li><a href="#about" class="hover:text-brandLime transition-colors">Tentang Kami</a></li>
+                        <li><a href="#services" class="hover:text-brandLime transition-colors">3 Pilar Layanan</a></li>
+                        <li><a href="#estimator" class="hover:text-brandLime transition-colors">Kalkulator Layanan</a>
+                        </li>
+                        <li><a href="#data-visualizer" class="hover:text-brandLime transition-colors">Reka Data
+                                Visualizer</a></li>
+                        <li><a href="#roi-calculator" class="hover:text-brandLime transition-colors">Audit Brand &
+                                ROI</a></li>
+                        <li><a href="#team" class="hover:text-brandLime transition-colors">Tim Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect / Socials -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-stone-200 mb-4">Hubungi Kami</h4>
+                    <p class="text-xs text-stone-400 mb-3">Siap menaikkan kelas brand Anda bersama Reka Niskala?</p>
+                    <p class="text-xs text-stone-400 mb-4"><i
+                            class="fa-solid fa-phone text-brandOrange mr-1"></i>0823-4704-8779</p>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/reka.niskala/" target="_blank"
+                        class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 text-white px-4 py-2.5 rounded-xl font-bold text-xs transition-all mb-3">
+                        <i class="fa-brands fa-instagram text-pink-400 text-base"></i>
+                        <span>@reka.niskala</span>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/6282347048779?text=Halo%20Reka%20Niskala,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20agensi."
+                        target="_blank"
+                        class="flex items-center gap-2 gradient-orange-btn text-white px-4 py-2.5 rounded-xl font-bold text-xs">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>WhatsApp Direct</span>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500">
+                <p>&copy; 2026 Reka Niskala Creative Agency. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Crafted to Connect with Passion & Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // --- 1. MOBILE MENU TOGGLE ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- 2. DYNAMIC PACKAGE ESTIMATOR LOGIC ---
+        let selectedDuration = 3;
+
+        function setDuration(months) {
+            selectedDuration = months;
+            document.querySelectorAll('.dur-btn').forEach(btn => {
+                btn.classList.remove('bg-brandOrange', 'text-white', 'border-brandOrange');
+                btn.classList.add('bg-white', 'text-stone-700', 'border-stone-200');
+            });
+            const activeBtn = document.getElementById(`dur-${months}`);
+            activeBtn.classList.remove('bg-white', 'text-stone-700', 'border-stone-200');
+            activeBtn.classList.add('bg-brandOrange', 'text-white', 'border-brandOrange');
+
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            let baseMonthly = 0;
+            let oneTime = 0;
+
+            if (document.getElementById('mod-visual').checked) {
+                baseMonthly += 2500000;
+            }
+            if (document.getElementById('mod-system').checked) {
+                oneTime += 3500000;
+            }
+            if (document.getElementById('mod-data').checked) {
+                baseMonthly += 1800000;
+            }
+
+            let discountRate = 0;
+            if (selectedDuration === 3) discountRate = 0.10;
+            if (selectedDuration === 6) discountRate = 0.20;
+
+            const totalMonthlyRaw = baseMonthly * selectedDuration;
+            const discountAmount = totalMonthlyRaw * discountRate;
+            const finalTotal = (totalMonthlyRaw - discountAmount) + oneTime;
+
+            document.getElementById('summary-base').innerText = `Rp ${(totalMonthlyRaw + oneTime).toLocaleString('id-ID')}`;
+            document.getElementById('summary-dur-text').innerText = `${selectedDuration} Bulan`;
+            document.getElementById('summary-discount').innerText = `-Rp ${discountAmount.toLocaleString('id-ID')}`;
+            document.getElementById('total-price').innerText = `Rp ${finalTotal.toLocaleString('id-ID')}`;
+        }
+
+        function sendToWhatsApp() {
+            const visual = document.getElementById('mod-visual').checked ? 'Ya' : 'Tidak';
+            const system = document.getElementById('mod-system').checked ? 'Ya' : 'Tidak';
+            const data = document.getElementById('mod-data').checked ? 'Ya' : 'Tidak';
+            const total = document.getElementById('total-price').innerText;
+
+            const text = `Hii! I'm Rekan Niskala! 🎉\n\n` +
+                `Saya mau diskusi mengenai paket layanan Reka Niskala yang sudah saya simulasikan:\n\n` +
+                `📦 Paket yang Dipilih:\n` +
+                `  • Reka Visual (Social Media): ${visual}\n` +
+                `  • Reka System (Web E-Commerce): ${system}\n` +
+                `  • Reka Data (Database & WA CRM): ${data}\n\n` +
+                `🗓️ Durasi Kerjasama: ${selectedDuration} Bulan\n` +
+                `💰 Total Estimasi Investasi: ${total}\n\n` +
+                `Boleh minta info lebih lanjut dan jadwal diskusi proyeknya? Terima kasih! 🙏`;
+
+            window.open(`https://wa.me/6282347048779?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // --- 3. SQL DATABASE VISUALIZER DATA & LOGIC ---
+        const dbData = {
+            customers: {
+                title: "Table: Customers",
+                desc: "Profil pelanggan, histori pembelian, dan preferensi unik segmen gift.",
+                headers: ["customer_id", "full_name", "city", "lifetime_orders", "last_order_date"],
+                rows: [
+                    ["CUST-001", "Andi Pratama", "Makassar", "4", "2026-10-12"],
+                    ["CUST-002", "Siti Rahma", "Gowa", "2", "2026-10-18"],
+                    ["CUST-003", "Budi Santoso", "Maros", "1", "2026-09-25"],
+                    ["CUST-004", "Rina Astuti", "Makassar", "5", "2026-10-21"]
+                ],
+                sql: "SELECT customer_id, full_name, lifetime_orders FROM customers WHERE city = 'Makassar';"
+            },
+            orders: {
+                title: "Table: Orders",
+                desc: "Pencatatan transaksi checkout e-commerce secara real-time.",
+                headers: ["order_id", "customer_id", "order_date", "total_amount", "order_status"],
+                rows: [
+                    ["ORD-901", "CUST-001", "2026-10-12", "Rp 450.000", "COMPLETED"],
+                    ["ORD-902", "CUST-004", "2026-10-21", "Rp 280.000", "PROCESSING"],
+                    ["ORD-903", "CUST-002", "2026-10-18", "Rp 150.000", "SHIPPED"]
+                ],
+                sql: "SELECT * FROM orders WHERE order_status = 'COMPLETED' ORDER BY total_amount DESC;"
+            },
+            products: {
+                title: "Table: Products",
+                desc: "Katalog produk kreatif & varian gift kustom.",
+                headers: ["product_id", "product_name", "category", "price", "stock_qty"],
+                rows: [
+                    ["PRD-01", "Custom Gift Box Deluxe", "Gift Set", "Rp 250.000", "45"],
+                    ["PRD-02", "3D Acrylic Lamp Frame", "Decor", "Rp 180.000", "20"],
+                    ["PRD-03", "Personalized Leather Journal", "Stationery", "Rp 120.000", "60"]
+                ],
+                sql: "SELECT product_name, price FROM products WHERE stock_qty > 0;"
+            },
+            payments: {
+                title: "Table: Payments",
+                desc: "Integritas transaksi pembayaran via QRIS / Gateway.",
+                headers: ["payment_id", "order_id", "method", "amount", "payment_status"],
+                rows: [
+                    ["PAY-701", "ORD-901", "QRIS", "Rp 450.000", "PAID"],
+                    ["PAY-702", "ORD-902", "BANK_TRANSFER", "Rp 280.000", "VERIFIED"],
+                    ["PAY-703", "ORD-903", "QRIS", "Rp 150.000", "PAID"]
+                ],
+                sql: "SELECT method, COUNT(*) AS total_tx FROM payments GROUP BY method;"
+            },
+            shipments: {
+                title: "Table: Shipments",
+                desc: "Pengiriman logistik & pelacakan nomor resi terintegrasi.",
+                headers: ["shipment_id", "order_id", "courier", "tracking_no", "delivery_status"],
+                rows: [
+                    ["SHP-301", "ORD-901", "J&T Express", "JT992810291", "DELIVERED"],
+                    ["SHP-302", "ORD-903", "JNE Reguler", "JNE88219022", "IN_TRANSIT"]
+                ],
+                sql: "SELECT * FROM shipments WHERE delivery_status = 'IN_TRANSIT';"
+            }
+        };
+
+        function showTable(tableName) {
+            const table = dbData[tableName];
+            document.getElementById('table-title').innerText = table.title;
+            document.getElementById('table-desc').innerText = table.desc;
+            document.getElementById('sql-code').innerText = table.sql;
+
+            // Render Header
+            const headerTr = document.getElementById('table-header');
+            headerTr.innerHTML = '';
+            table.headers.forEach(h => {
+                const th = document.createElement('th');
+                th.className = 'py-2 px-3 text-[11px] font-extrabold uppercase';
+                th.innerText = h;
+                headerTr.appendChild(th);
+            });
+
+            // Render Rows
+            const bodyTbody = document.getElementById('table-body');
+            bodyTbody.innerHTML = '';
+            table.rows.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-stone-50/80';
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.className = 'py-2 px-3 border-t border-stone-100 text-xs';
+                    td.innerText = cell;
+                    tr.appendChild(td);
+                });
+                bodyTbody.appendChild(tr);
+            });
+
+            // Update Tab Active Style - using CSS class to avoid Tailwind conflict
+            document.querySelectorAll('.db-tab-btn').forEach(btn => {
+                btn.classList.remove('is-active');
+            });
+            const activeBtn = document.getElementById(`btn-${tableName}`);
+            activeBtn.classList.add('is-active');
+        }
+
+        // --- 4. BRAND AUDIT & ROI CALCULATOR LOGIC ---
+        function calculateROI() {
+            const customers = parseFloat(document.getElementById('roi-customers').value) || 0;
+            const aov = parseFloat(document.getElementById('roi-aov').value) || 0;
+            const currentRepeat = parseFloat(document.getElementById('roi-repeat').value) || 10;
+
+            document.getElementById('roi-repeat-val').innerText = currentRepeat;
+
+            const currentRev = customers * aov;
+            // Projected: assuming 25% boost in repeat order & AOV through Reka Data WA CRM + Reka System
+            const projectedRepeat = currentRepeat * 1.35;
+            const projectedRev = (customers * (1 + (projectedRepeat / 100))) * aov;
+            const gain = projectedRev - currentRev;
+
+            document.getElementById('roi-current-rev').innerText = `Rp ${Math.round(currentRev).toLocaleString('id-ID')}`;
+            document.getElementById('roi-projected-rev').innerText = `Rp ${Math.round(projectedRev).toLocaleString('id-ID')}`;
+            document.getElementById('roi-gain').innerText = `+Rp ${Math.round(gain).toLocaleString('id-ID')} /bln`;
+        }
+
+        // Initialize On Load
+        window.onload = function () {
+            calculateEstimate();
+            showTable('customers');
+            calculateROI();
+        }
+    </script>
+</body>
+
+</html>
